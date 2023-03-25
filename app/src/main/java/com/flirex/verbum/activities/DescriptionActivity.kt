@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.HandlerCompat.postDelayed
 import com.flirex.verbum.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -36,7 +37,15 @@ var theWord:String = ""
 var firstLetter = Char
 var userPlaylists:String? = ""
 lateinit var userPlaylistsList: List<String>
+lateinit var userPlaylistsListNewPlaylist: List<String>
 var checkplaylists:Int = 1
+var numOfPlaylist:String? = ""
+var playListnumOneToPush:String? = ""
+var playListnumTwoToPush:String? = ""
+var playListnumThreeToPush:String? = ""
+var playListnumOneToPushCreate:String? = ""
+var playListnumTwoToPushCreate:String? = ""
+var playListnumThreeToPushCreate:String? = ""
 
 
 class DescriptionActivity : AppCompatActivity() {
@@ -93,13 +102,22 @@ class DescriptionActivity : AppCompatActivity() {
         createNewPlaylist = findViewById(R.id.createNewPlaylistButton)
         createNewPlaylist.visibility = View.GONE
 
-
+        numOfPlaylist = intent?.extras?.getString("numPlaylist").toString()
+        if (numOfPlaylist == "1"){
+            playlistNumberOneSwitch.isChecked = true
+        }
+        if (numOfPlaylist == "2"){
+            playlistNumberTwoSwitch.isChecked = true
+        }
+        if (numOfPlaylist == "3"){
+            playlistNumberThreeSwitch.isChecked = true
+        }
         theWord = intent?.extras?.getString("word").toString()
         theWord = theWord.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
         theWord = theWord.replace(" ", "")
         auth = Firebase.auth
-        val currentUser = auth.currentUser
-        val db = Firebase.firestore
+        var currentUser = auth.currentUser
+        var db = Firebase.firestore
         db.collection("${theWord.get(0)}").document("$theWord")
             .get()
             .addOnSuccessListener { document ->
@@ -122,14 +140,41 @@ class DescriptionActivity : AppCompatActivity() {
                     userPlaylistsList = userPlaylists!!.split(" ") as MutableList<String>
                     checkplaylists = 1
                 }
-                Log.d("test", "$userPlaylists")
-                Log.d("test", "$userPlaylistsList")
             }
-        findViewById<ImageButton>(R.id.descriptionBackButton)
-            .setOnClickListener {
-                val childIntent: Intent = Intent(this, MainWindowActivity::class.java )
-                resultLauncher.launch(childIntent)
-            }
+        if (numOfPlaylist == "0") {
+            findViewById<ImageButton>(R.id.descriptionBackButton)
+                .setOnClickListener {
+                    val childIntent: Intent = Intent(this, MainWindowActivity::class.java )
+                    resultLauncher.launch(childIntent)
+                }
+        }
+        if (numOfPlaylist == "1"){
+            findViewById<ImageButton>(R.id.descriptionBackButton)
+                .setOnClickListener {
+                    val intent: Intent = Intent(this, AlonePlaylistActivity::class.java )
+                    intent.putExtra("word", userPlaylistsList[0])
+                    intent.putExtra("num", "1")
+                    startActivity(intent)
+                }
+        }
+        if (numOfPlaylist == "2"){
+            findViewById<ImageButton>(R.id.descriptionBackButton)
+                .setOnClickListener {
+                    val intent: Intent = Intent(this, AlonePlaylistActivity::class.java )
+                    intent.putExtra("word", userPlaylistsList[1])
+                    intent.putExtra("num", "2")
+                    startActivity(intent)
+                }
+        }
+        if (numOfPlaylist == "3"){
+            findViewById<ImageButton>(R.id.descriptionBackButton)
+                .setOnClickListener {
+                    val intent: Intent = Intent(this, AlonePlaylistActivity::class.java )
+                    intent.putExtra("word", userPlaylistsList[2])
+                    intent.putExtra("num", "3")
+                    startActivity(intent)
+                }
+        }
         findViewById<Button>(R.id.add_buttonDescription)
             .setOnClickListener {
                 add_buttonDescription.visibility = View.GONE
@@ -140,24 +185,29 @@ class DescriptionActivity : AppCompatActivity() {
                     createNewPlaylist.visibility = View.VISIBLE
                 }else {
                     try {
+                        Log.d("test", "add_buttonDescription")
                         if (userPlaylistsList.size == 1) {
                             playlistNumberOneSwitch.visibility = View.VISIBLE
                             playlistNumberOneSwitch.setText(userPlaylistsList[0])
                             playlistNumberTwoSwitch.visibility = View.GONE
                             playlistNumberThreeSwitch.visibility = View.GONE
                             createNewPlaylist.visibility = View.VISIBLE
-                            Log.d("test", "correct")
                         }
                         if (userPlaylistsList.size == 2) {
                             playlistNumberOneSwitch.visibility = View.VISIBLE
+                            playlistNumberOneSwitch.setText(userPlaylistsList[0])
                             playlistNumberTwoSwitch.visibility = View.VISIBLE
+                            playlistNumberTwoSwitch.setText(userPlaylistsList[0])
                             playlistNumberThreeSwitch.visibility = View.GONE
                             createNewPlaylist.visibility = View.VISIBLE
                         }
                         if (userPlaylistsList.size == 3) {
                             playlistNumberOneSwitch.visibility = View.VISIBLE
+                            playlistNumberOneSwitch.setText(userPlaylistsList[0])
                             playlistNumberTwoSwitch.visibility = View.VISIBLE
+                            playlistNumberTwoSwitch.setText(userPlaylistsList[1])
                             playlistNumberThreeSwitch.visibility = View.VISIBLE
+                            playlistNumberThreeSwitch.setText(userPlaylistsList[2])
                             createNewPlaylist.visibility = View.VISIBLE
                         }
                     }catch (e:Exception){
@@ -171,13 +221,181 @@ class DescriptionActivity : AppCompatActivity() {
                 createNewPlaylistAnswer.visibility = View.VISIBLE
                 newPlaylistName.visibility = View.VISIBLE
             }
+        fun abc(str: String){
+            Log.d("test", "$str")
+            userPlaylistsListNewPlaylist = str.split(" ") as MutableList<String>
+            Log.d("test", "$userPlaylistsListNewPlaylist")
+            try {
+                if (userPlaylistsListNewPlaylist.size == 1) {
+                    playlistNumberOneSwitch.visibility = View.VISIBLE
+                    playlistNumberOneSwitch.setText(userPlaylistsListNewPlaylist[0])
+                    playlistNumberTwoSwitch.visibility = View.GONE
+                    playlistNumberThreeSwitch.visibility = View.GONE
+                    createNewPlaylist.visibility = View.VISIBLE
+                    Log.d("test", "correct")
+                }
+                if (userPlaylistsListNewPlaylist.size == 2) {
+                    playlistNumberOneSwitch.visibility = View.VISIBLE
+                    playlistNumberOneSwitch.setText(userPlaylistsListNewPlaylist[0])
+                    playlistNumberTwoSwitch.visibility = View.VISIBLE
+                    playlistNumberTwoSwitch.setText(userPlaylistsListNewPlaylist[1])
+                    playlistNumberThreeSwitch.visibility = View.GONE
+                    createNewPlaylist.visibility = View.VISIBLE
+                }
+                if (userPlaylistsListNewPlaylist.size == 3) {
+                    playlistNumberOneSwitch.visibility = View.VISIBLE
+                    playlistNumberOneSwitch.setText(userPlaylistsListNewPlaylist[0])
+                    playlistNumberTwoSwitch.visibility = View.VISIBLE
+                    playlistNumberTwoSwitch.setText(userPlaylistsListNewPlaylist[1])
+                    playlistNumberThreeSwitch.visibility = View.VISIBLE
+                    playlistNumberThreeSwitch.setText(userPlaylistsListNewPlaylist[2])
+                    createNewPlaylist.visibility = View.VISIBLE
+                }
+            }catch (e:Exception){
+                Log.d("test", "not correct")
+            }
+        }
+        findViewById<Button>(R.id.createNewPlaylistAnswerButton)
+            .setOnClickListener {
+                createNewPlaylist.visibility = View.VISIBLE
+                createNewPlaylistAnswer.visibility = View.GONE
+                newPlaylistName.visibility = View.GONE
+                db.collection("users").document(currentUser!!.uid)
+                    .get()
+                    .addOnSuccessListener { document ->
+                        userPlaylists = document.getString("playlists")
+                        playListnumOneToPushCreate = document.getString("playlist1")
+                        playListnumTwoToPushCreate = document.getString("playlist2")
+                        playListnumThreeToPushCreate = document.getString("playlist3")
+                        userPlaylists = if (userPlaylists == ""){
+                            newPlaylistName.text.toString()
+                        }else {
+                            userPlaylists + " " + newPlaylistName.text.toString()
+                        }
+                        Log.d("test","$playListnumOneToPushCreate")
+                        var userDoc = User(
+                            uid = currentUser.uid,
+                            email = currentUser.email,
+                            name = currentUser.displayName,
+                            playlists = userPlaylists,
+                            playlist1 = playListnumOneToPushCreate,
+                            playlist2 = playListnumTwoToPushCreate,
+                            playlist3 = playListnumThreeToPushCreate,
+                            letters = "Баснописец Ёмкость Абитуриент Абонемент Абсурдный Ангар Беззаконие Внаём Вражда Глагол Говеть Драгунка Европеизм Жмот Знаменование Икона Йог Ксении Лебедь Мракобес Новосёл Овёс Птица Рыбак Созорничать Тона Указ Филёр Хетты Циклопы Чизель Шибер Щипцы Эндемики Юрта Ялик"
+                        )
+                        val washingtonRef = db.collection("users").document(currentUser!!.uid)
+                        washingtonRef
+                            .set(userDoc)
+                        val handler = android.os.Handler()
+                        handler.postDelayed({ abc(userPlaylists.toString()) }, 1000)
+                    }
+            }
+        playlistNumberOneSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked){
+                db.collection("users").document(currentUser!!.uid)
+                    .get()
+                    .addOnSuccessListener { document ->
+                        userPlaylists = document.getString("playlists")
+                        playListnumOneToPush = document.getString("playlist1")
+                        playListnumTwoToPush = document.getString("playlist2")
+                        playListnumThreeToPush = document.getString("playlist3")
+                        playListnumOneToPush = if (playListnumOneToPush == ""){
+                            theWord
+                        }else {
+                            playListnumOneToPush + " " + theWord
+                        }
+                        val userDoc = User(
+                            uid = currentUser.uid,
+                            email = currentUser.email,
+                            name = currentUser.displayName,
+                            playlists = userPlaylists,
+                            playlist1 = playListnumOneToPush,
+                            playlist2 = playListnumTwoToPush,
+                            playlist3 = playListnumThreeToPush,
+                            letters = "Баснописец Ёмкость Абитуриент Абонемент Абсурдный Ангар Беззаконие Внаём Вражда Глагол Говеть Драгунка Европеизм Жмот Знаменование Икона Йог Ксении Лебедь Мракобес Новосёл Овёс Птица Рыбак Созорничать Тона Указ Филёр Хетты Циклопы Чизель Шибер Щипцы Эндемики Юрта Ялик"
+                        )
+                        val washingtonRef = db.collection("users").document(currentUser!!.uid)
+                        washingtonRef
+                            .set(userDoc)
+                    }
+                playListnumOneToPush = ""
+                playListnumTwoToPush = ""
+                playListnumThreeToPush = ""
+            }else{
+                println("Standard Switch is off")
+            }
+        }
+        playlistNumberTwoSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked){
+                db.collection("users").document(currentUser!!.uid)
+                    .get()
+                    .addOnSuccessListener { document ->
+                        userPlaylists = document.getString("playlists")
+                        playListnumOneToPush = document.getString("playlist1")
+                        playListnumTwoToPush = document.getString("playlist2")
+                        playListnumThreeToPush = document.getString("playlist3")
+                        playListnumTwoToPush = if (playListnumTwoToPush == ""){
+                            theWord
+                        }else {
+                            playListnumTwoToPush + " " + theWord
+                        }
+                        val userDoc = User(
+                            uid = currentUser.uid,
+                            email = currentUser.email,
+                            name = currentUser.displayName,
+                            playlists = userPlaylists,
+                            playlist1 = playListnumOneToPush,
+                            playlist2 = playListnumTwoToPush,
+                            playlist3 = playListnumThreeToPush,
+                            letters = "Баснописец Ёмкость Абитуриент Абонемент Абсурдный Ангар Беззаконие Внаём Вражда Глагол Говеть Драгунка Европеизм Жмот Знаменование Икона Йог Ксении Лебедь Мракобес Новосёл Овёс Птица Рыбак Созорничать Тона Указ Филёр Хетты Циклопы Чизель Шибер Щипцы Эндемики Юрта Ялик"
+                        )
+                        val washingtonRef = db.collection("users").document(currentUser!!.uid)
+                        washingtonRef
+                            .set(userDoc)
+                    }
+                playListnumOneToPush = ""
+                playListnumTwoToPush = ""
+                playListnumThreeToPush = ""
+            }else{
+                println("Standard Switch is off")
+            }
+        }
+        playlistNumberThreeSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked){
+                db.collection("users").document(currentUser!!.uid)
+                    .get()
+                    .addOnSuccessListener { document ->
+                        userPlaylists = document.getString("playlists")
+                        playListnumOneToPush = document.getString("playlist1")
+                        playListnumTwoToPush = document.getString("playlist2")
+                        playListnumThreeToPush = document.getString("playlist3")
+                        playListnumThreeToPush = if (playListnumThreeToPush == ""){
+                            theWord
+                        }else {
+                            playListnumThreeToPush + " " + theWord
+                        }
+                        val userDoc = User(
+                            uid = currentUser.uid,
+                            email = currentUser.email,
+                            name = currentUser.displayName,
+                            playlists = userPlaylists,
+                            playlist1 = playListnumOneToPush,
+                            playlist2 = playListnumTwoToPush,
+                            playlist3 = playListnumThreeToPush,
+                            letters = "Баснописец Ёмкость Абитуриент Абонемент Абсурдный Ангар Беззаконие Внаём Вражда Глагол Говеть Драгунка Европеизм Жмот Знаменование Икона Йог Ксении Лебедь Мракобес Новосёл Овёс Птица Рыбак Созорничать Тона Указ Филёр Хетты Циклопы Чизель Шибер Щипцы Эндемики Юрта Ялик"
+                        )
+                        val washingtonRef = db.collection("users").document(currentUser!!.uid)
+                        washingtonRef
+                            .set(userDoc)
+                    }
+                playListnumOneToPush = ""
+                playListnumTwoToPush = ""
+                playListnumThreeToPush = ""
+            }else{
+                println("Standard Switch is off")
+            }
+        }
     }
-
-    /*fun addToPlaylistFromChoose() {
-        val childIntent: Intent
-        childIntent = Intent(this, ChoosePlaylistAct::class.java )
-        resultLauncher.launch(childIntent)
-    }*/
 
 
 }

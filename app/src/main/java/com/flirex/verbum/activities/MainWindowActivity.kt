@@ -35,6 +35,7 @@ class MainWindowActivity : AppCompatActivity(), View.OnClickListener{
             .setOnClickListener {
                 val intent: Intent = Intent(this, DescriptionActivity::class.java )
                 intent.putExtra("word", textInput.text.toString())
+                intent.putExtra("numPlaylist", "0")
                 startActivity(intent)
             }
         auth = Firebase.auth

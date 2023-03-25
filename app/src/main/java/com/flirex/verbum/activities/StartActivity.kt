@@ -3,6 +3,7 @@ package com.flirex.verbum.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.flirex.verbum.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -18,8 +19,11 @@ class StartActivity : AppCompatActivity() {
         setContentView(R.layout.activity_start)
         auth = Firebase.auth
         val currentUser = auth.currentUser
-        //db.collection("users").document(currentUser!!.uid)
-        //    .get()
+        db.collection("users").document(currentUser!!.uid)
+            .get()
+            .addOnSuccessListener { document ->
+                Log.d("test","result success")
+            }
 
         val intent = Intent(this, LoadingActivity::class.java)
         val handler = android.os.Handler()

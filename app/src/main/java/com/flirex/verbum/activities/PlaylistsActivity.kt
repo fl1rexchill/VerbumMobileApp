@@ -36,7 +36,7 @@ class PlaylistsActivity : AppCompatActivity(), View.OnClickListener {
         playlistsActivityTitle = findViewById(R.id.playlistsActivityTitle)
 
         descriptionBackButton = findViewById(R.id.playlistsBackButton)
-        descriptionBackButton.visibility = View.GONE
+        descriptionBackButton.visibility = View.VISIBLE
         descriptionBackButton.setBackgroundResource(0)
 
         playlistNumberOneActivityPlaylist = findViewById(R.id.playlistNumberOneActivityPlaylist)

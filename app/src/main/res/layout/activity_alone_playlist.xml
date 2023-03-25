@@ -18,6 +18,17 @@
         app:layout_constraintVertical_bias="0.501"
         app:srcCompat="@drawable/resource__" />
 
+    <ImageButton
+        android:id="@+id/alonePlaylistsBackButton"
+        android:layout_width="50dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
     <TextView
         android:id="@+id/alonePlaylistActivityTitle"
         android:layout_width="300sp"
@@ -37,7 +48,6 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
         android:textColor="#000000"
         android:textSize="32sp"
         app:autoSizeMinTextSize="32sp"
@@ -50,7 +60,6 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
         android:textColor="#000000"
         android:textSize="32sp"
         app:autoSizeMinTextSize="32sp"
@@ -63,7 +72,6 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
         android:textColor="#000000"
         android:textSize="32sp"
         app:autoSizeMinTextSize="32sp"

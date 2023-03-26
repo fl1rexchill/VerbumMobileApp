@@ -175,6 +175,15 @@ class DescriptionActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
         }
+        if (numOfPlaylist == "99"){
+            val letterDescription = intent?.extras?.getString("letter").toString()
+            findViewById<ImageButton>(R.id.descriptionBackButton)
+                .setOnClickListener {
+                    val intent: Intent = Intent(this, ChooseWordFromLetterActivity::class.java )
+                    intent.putExtra("letter", "$letterDescription")
+                    startActivity(intent)
+                }
+        }
         findViewById<Button>(R.id.add_buttonDescription)
             .setOnClickListener {
                 add_buttonDescription.visibility = View.GONE
@@ -197,7 +206,7 @@ class DescriptionActivity : AppCompatActivity() {
                             playlistNumberOneSwitch.visibility = View.VISIBLE
                             playlistNumberOneSwitch.setText(userPlaylistsList[0])
                             playlistNumberTwoSwitch.visibility = View.VISIBLE
-                            playlistNumberTwoSwitch.setText(userPlaylistsList[0])
+                            playlistNumberTwoSwitch.setText(userPlaylistsList[1])
                             playlistNumberThreeSwitch.visibility = View.GONE
                             createNewPlaylist.visibility = View.VISIBLE
                         }

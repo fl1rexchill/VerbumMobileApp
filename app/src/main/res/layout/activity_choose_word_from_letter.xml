@@ -18,4 +18,76 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/resource__"
         tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/chooseWordNumberFour"
+        android:layout_width="242dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        app:autoSizeMinTextSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseWordNumberThree" />
+
+    <ImageButton
+        android:id="@+id/chooseWordBackButton"
+        android:layout_width="50dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/chooseWordActivityTitle"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/chooseWordNumberOne"
+        android:layout_width="242dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        app:autoSizeMinTextSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseWordActivityTitle" />
+
+    <TextView
+        android:id="@+id/chooseWordNumberThree"
+        android:layout_width="242dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        app:autoSizeMinTextSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseWordNumberTwo" />
+
+    <TextView
+        android:id="@+id/chooseWordNumberTwo"
+        android:layout_width="242dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        app:autoSizeMinTextSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseWordNumberOne" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,11 +19,12 @@ class StartActivity : AppCompatActivity() {
         setContentView(R.layout.activity_start)
         auth = Firebase.auth
         val currentUser = auth.currentUser
-        db.collection("users").document(currentUser!!.uid)
+        Log.d("test","result success")
+        /*db.collection("users").document(currentUser!!.uid)
             .get()
             .addOnSuccessListener { document ->
                 Log.d("test","result success")
-            }
+            }*/
 
         val intent = Intent(this, LoadingActivity::class.java)
         val handler = android.os.Handler()

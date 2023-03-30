@@ -13,24 +13,23 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-var playlistsString:String? = ""
-var playlistNumberOne:String? = ""
-var playlistNumberTwo:String? = ""
-var playlistNumberThree:String? = ""
-lateinit var PlaylistsList: MutableList<String>
 
-class MainWindowActivity : AppCompatActivity(), View.OnClickListener{
+
+class MainWindowActivity: AppCompatActivity(), View.OnClickListener{
     private lateinit var auth: FirebaseAuth
     val db = Firebase.firestore
 
     private lateinit var findButton: Button
     private lateinit var textInput: TextInputEditText
+    private lateinit var AlphabetBackButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_window)
+        setContentView(R.layout.activity_alphabet)
         findButton = findViewById(R.id.find_button)
         textInput = findViewById(R.id.text_input)
+        AlphabetBackButton = findViewById(R.id.AlphabetBackButton)
+        AlphabetBackButton.setBackgroundResource(0)
         findButton.setOnClickListener(this)
         findViewById<Button>(R.id.find_button)
             .setOnClickListener {
@@ -39,21 +38,9 @@ class MainWindowActivity : AppCompatActivity(), View.OnClickListener{
                 intent.putExtra("numPlaylist", "0")
                 startActivity(intent)
             }
-        auth = Firebase.auth
-        val currentUser = auth.currentUser
-        val db = Firebase.firestore
-        db.collection("users").document(currentUser!!.uid)
-            .get()
-            .addOnSuccessListener { document ->
-                playlistsString = document.getString("playlists")
-                playlistNumberOne = document.getString("playlist1")
-                playlistNumberTwo = document.getString("playlist2")
-                playlistNumberThree = document.getString("playlist3")
-                PlaylistsList = playlistsString!!.split(" ") as MutableList<String>
-            }
-        findViewById<Button>(R.id.myPlaylistsButton)
+        findViewById<ImageButton>(R.id.AlphabetBackButton)
             .setOnClickListener {
-                val intent: Intent = Intent(this, PlaylistsActivity::class.java )
+                val intent: Intent = Intent(this, MainActivity::class.java )
                 startActivity(intent)
             }
         findViewById<ImageView>(R.id.imageViewLetter1)

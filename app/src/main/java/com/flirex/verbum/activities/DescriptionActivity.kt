@@ -31,7 +31,7 @@ private lateinit var createNewPlaylistAnswer: Button
 private lateinit var createNewPlaylist: Button
 
 
-
+var statusSting:String? = ""
 var theDefinition:String? = ""
 var theWord:String = ""
 var firstLetter = Char
@@ -276,6 +276,7 @@ class DescriptionActivity : AppCompatActivity() {
                         playListnumOneToPushCreate = document.getString("playlist1")
                         playListnumTwoToPushCreate = document.getString("playlist2")
                         playListnumThreeToPushCreate = document.getString("playlist3")
+                        statusSting = document.getString("status")
                         userPlaylists = if (userPlaylists == ""){
                             newPlaylistName.text.toString()
                         }else {
@@ -283,6 +284,7 @@ class DescriptionActivity : AppCompatActivity() {
                         }
                         Log.d("test","$playListnumOneToPushCreate")
                         var userDoc = User(
+                            status = statusSting,
                             uid = currentUser.uid,
                             email = currentUser.email,
                             name = currentUser.displayName,
@@ -308,12 +310,14 @@ class DescriptionActivity : AppCompatActivity() {
                         playListnumOneToPush = document.getString("playlist1")
                         playListnumTwoToPush = document.getString("playlist2")
                         playListnumThreeToPush = document.getString("playlist3")
+                        statusSting = document.getString("status")
                         playListnumOneToPush = if (playListnumOneToPush == ""){
                             theWord
                         }else {
                             playListnumOneToPush + " " + theWord
                         }
                         val userDoc = User(
+                            status = statusSting,
                             uid = currentUser.uid,
                             email = currentUser.email,
                             name = currentUser.displayName,
@@ -343,12 +347,14 @@ class DescriptionActivity : AppCompatActivity() {
                         playListnumOneToPush = document.getString("playlist1")
                         playListnumTwoToPush = document.getString("playlist2")
                         playListnumThreeToPush = document.getString("playlist3")
+                        statusSting = document.getString("status")
                         playListnumTwoToPush = if (playListnumTwoToPush == ""){
                             theWord
                         }else {
                             playListnumTwoToPush + " " + theWord
                         }
                         val userDoc = User(
+                            status = statusSting,
                             uid = currentUser.uid,
                             email = currentUser.email,
                             name = currentUser.displayName,
@@ -378,12 +384,14 @@ class DescriptionActivity : AppCompatActivity() {
                         playListnumOneToPush = document.getString("playlist1")
                         playListnumTwoToPush = document.getString("playlist2")
                         playListnumThreeToPush = document.getString("playlist3")
+                        statusSting = document.getString("status")
                         playListnumThreeToPush = if (playListnumThreeToPush == ""){
                             theWord
                         }else {
                             playListnumThreeToPush + " " + theWord
                         }
                         val userDoc = User(
+                            status = statusSting,
                             uid = currentUser.uid,
                             email = currentUser.email,
                             name = currentUser.displayName,

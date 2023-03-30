@@ -4,10 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import androidx.core.widget.doOnTextChanged
 import com.flirex.verbum.R
 import com.google.firebase.auth.FirebaseAuth
@@ -94,12 +91,19 @@ class SingUpActivity : Activity() {
             emailEditText.setText("")
             passwordEditText.setText("")
 
+            var checkBoxUser: CheckBox = findViewById(R.id.checkBoxUser)
+            var checkBoxModer: CheckBox = findViewById(R.id.checkBoxModer)
+
+            var statusString:String = "0"
+            if(checkBoxUser.isChecked) statusString = "0"
+            if(checkBoxModer.isChecked) statusString = "1"
 
 //            init user document
             val userDoc = User(
                 uid = currentUser.uid,
                 email = currentUser.email,
                 name = currentUser.displayName,
+                status = statusString,
                 playlists = "",
                 playlist1 = "",
                 playlist2 = "",
@@ -127,7 +131,7 @@ class SingUpActivity : Activity() {
 
 
 
-                    val intent: Intent = Intent(this, MainWindowActivity::class.java )
+                    val intent: Intent = Intent(this, MainActivity::class.java )
                     startActivity(intent)
 
                 }

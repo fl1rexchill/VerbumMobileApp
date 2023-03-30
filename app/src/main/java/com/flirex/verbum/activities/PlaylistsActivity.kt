@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import com.flirex.verbum.R
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -20,10 +22,8 @@ private lateinit var playlistNumberTwoActivityPlaylist: TextView
 private lateinit var playlistNumberThreeActivityPlaylist: TextView
 private lateinit var noPlaylistNowText: TextView
 private lateinit var descriptionBackButton: ImageButton
-
-
-
-
+private lateinit var PlaylistTextInput: TextInputEditText
+private lateinit var createNewPlaylistAnswerButtonPlaylist: Button
 
 class PlaylistsActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -50,6 +50,12 @@ class PlaylistsActivity : AppCompatActivity(), View.OnClickListener {
 
         noPlaylistNowText = findViewById(R.id.noPlaylistNowText)
         noPlaylistNowText.visibility = View.GONE
+
+        PlaylistTextInput = findViewById(R.id.PlaylistTextInput)
+        PlaylistTextInput.visibility = View.GONE
+
+        createNewPlaylistAnswerButtonPlaylist = findViewById(R.id.createNewPlaylistAnswerButtonPlaylist)
+        createNewPlaylistAnswerButtonPlaylist.visibility = View.GONE
 
         //playlistsActivityTitle.setText("Плейлисты")
         auth = Firebase.auth
@@ -88,7 +94,7 @@ class PlaylistsActivity : AppCompatActivity(), View.OnClickListener {
         }
         findViewById<ImageButton>(R.id.playlistsBackButton)
             .setOnClickListener {
-                val intent: Intent = Intent(this, MainWindowActivity::class.java )
+                val intent: Intent = Intent(this, MainActivity::class.java )
                 startActivity(intent)
             }
         playlistNumberOneActivityPlaylist.setOnClickListener(this)

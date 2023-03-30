@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF6DB"
-    tools:context=".activities.AlonePlaylistActivity">
+    tools:context=".activities.offersActivity">
 
     <ImageButton
-        android:id="@+id/alonePlaylistsBackButton"
+        android:id="@+id/offersBackButton"
         android:layout_width="50dp"
         android:layout_height="46dp"
         android:layout_marginStart="4dp"
@@ -19,10 +19,11 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/alonePlaylistActivityTitle"
-        android:layout_width="300sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:id="@+id/offersActivityTitle"
+        android:layout_width="304dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="16dp"
+        android:text="Новые предложения"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="40sp"
@@ -32,38 +33,38 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/wordNumberThree"
+        android:id="@+id/offersNumberOne"
         android:layout_width="242dp"
         android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:textColor="#000000"
-        android:textSize="32sp"
-        app:autoSizeMinTextSize="32sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wordNumberTwo" />
-
-    <TextView
-        android:id="@+id/wordNumberTwo"
-        android:layout_width="242dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:textColor="#000000"
-        android:textSize="32sp"
-        app:autoSizeMinTextSize="32sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wordNumberOne" />
-
-    <TextView
-        android:id="@+id/wordNumberOne"
-        android:layout_width="242dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:textColor="#000000"
         android:textSize="32sp"
         app:autoSizeMinTextSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alonePlaylistActivityTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/offersActivityTitle" />
+
+    <TextView
+        android:id="@+id/offersNumberThree"
+        android:layout_width="242dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        app:autoSizeMinTextSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offersNumberTwo" />
+
+    <TextView
+        android:id="@+id/offersNumberTwo"
+        android:layout_width="242dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        app:autoSizeMinTextSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offersNumberOne" />
 </androidx.constraintlayout.widget.ConstraintLayout>

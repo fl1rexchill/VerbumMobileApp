@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Verbum">
         <activity
+            android:name=".activities.AloneNewWordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.offersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewWordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AlonePlaylistActivity"
             android:exported="false" />
         <activity
@@ -17,9 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".activities.ChooseWordFromLetterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.ChoosePlaylistAct"
             android:exported="false" />
         <activity
             android:name=".activities.SingUpActivity"

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF6DB"
+    tools:context=".activities.MainActivity">
+
+    <Button
+        android:id="@+id/newOffersButtonMain"
+        android:layout_width="295dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#A02323"
+        android:fontFamily="sans-serif-black"
+        android:text="Новые предложения"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playlistsButtonMain" />
+
+    <Button
+        android:id="@+id/newWordButtonMain"
+        android:layout_width="295dp"
+        android:layout_height="77dp"
+        android:backgroundTint="#A02323"
+        android:fontFamily="sans-serif-black"
+        android:text="Предложить слово"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/playlistsButtonMain"
+        android:layout_width="295dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#A02323"
+        android:fontFamily="sans-serif-black"
+        android:text="плейлисты"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newWordButtonMain" />
+
+    <Button
+        android:id="@+id/alphabetButtonMain"
+        android:layout_width="295dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#A02323"
+        android:fontFamily="sans-serif-black"
+        android:text="Алфавит"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/newWordButtonMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_input2"
+        android:layout_width="288dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:hint="Введите слово"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/find_button2"
+        android:layout_width="56dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="#A02323"
+        android:textSize="30sp"
+        app:icon="@drawable/ic_action_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toEndOf="@+id/text_input"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

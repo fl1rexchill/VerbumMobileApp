@@ -26,7 +26,7 @@ class LoadingActivity : Activity() {
 
         val currentUser = auth.currentUser
         if(currentUser != null){
-            val intent: Intent = Intent(this, MainWindowActivity::class.java )
+            val intent: Intent = Intent(this, MainActivity::class.java )
             startActivity(intent)
 
             return

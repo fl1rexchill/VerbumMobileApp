@@ -4,19 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF6DB"
     tools:context=".activities.PlaylistsActivity">
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="540dp"
-        android:layout_height="1000dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501"
-        app:srcCompat="@drawable/resource__" />
 
     <ImageButton
         android:id="@+id/playlistsBackButton"
@@ -50,13 +39,43 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="#8BC34A"
+        android:backgroundTint="#A02323"
         android:text="Новый плейлист"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/PlaylistTextInput"
+        android:layout_width="244dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:hint="Введите название"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/createNewPlaylistAnswerButtonPlaylist"
+        android:layout_width="63dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="42dp"
+        android:backgroundTint="#A02323"
+        android:text="OK"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toEndOf="@+id/namePlaylistTextInput"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView

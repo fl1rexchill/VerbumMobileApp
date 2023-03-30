@@ -2,6 +2,7 @@ package com.flirex.verbum.activities
 
 // there must be empty constructor
 data class User(
+    val status: String? = null,
     val uid: String? = null,
     val email: String? = null,
     val name: String? = null,

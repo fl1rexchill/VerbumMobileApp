@@ -4,20 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF6DB"
     tools:context=".activities.ChooseWordFromLetterActivity">
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="540dp"
-        android:layout_height="1000dp"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/resource__"
-        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/chooseWordNumberFour"

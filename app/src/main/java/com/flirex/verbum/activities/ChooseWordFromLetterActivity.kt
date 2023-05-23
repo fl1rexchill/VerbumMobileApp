@@ -73,7 +73,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java )
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "1")
                             startActivity(intent)
                         }
@@ -81,7 +81,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java )
                             intent.putExtra("word", theWorsStringOnChooseActivityList[1])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "1")
                             startActivity(intent)
                         }
@@ -89,7 +89,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java )
                             intent.putExtra("word", theWorsStringOnChooseActivityList[2])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "1")
                             startActivity(intent)
                         }
@@ -97,7 +97,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java )
                             intent.putExtra("word", theWorsStringOnChooseActivityList[3])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "1")
                             startActivity(intent)
                         }
@@ -119,7 +119,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "2")
                             startActivity(intent)
                         }
@@ -127,7 +127,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[1])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "2")
                             startActivity(intent)
                         }
@@ -150,7 +150,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "3")
                             startActivity(intent)
                         }
@@ -158,7 +158,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[1])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "3")
                             startActivity(intent)
                         }
@@ -180,7 +180,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "4")
                             startActivity(intent)
                         }
@@ -188,7 +188,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[1])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "4")
                             startActivity(intent)
                         }
@@ -210,7 +210,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "5")
                             startActivity(intent)
                         }
@@ -232,7 +232,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "6")
                             startActivity(intent)
                         }
@@ -254,7 +254,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "7")
                             startActivity(intent)
                         }
@@ -276,7 +276,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "8")
                             startActivity(intent)
                         }
@@ -298,7 +298,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "9")
                             startActivity(intent)
                         }
@@ -320,7 +320,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "10")
                             startActivity(intent)
                         }
@@ -342,7 +342,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "11")
                             startActivity(intent)
                         }
@@ -364,7 +364,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "12")
                             startActivity(intent)
                         }
@@ -386,7 +386,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "13")
                             startActivity(intent)
                         }
@@ -408,7 +408,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "14")
                             startActivity(intent)
                         }
@@ -430,7 +430,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "15")
                             startActivity(intent)
                         }
@@ -452,7 +452,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "16")
                             startActivity(intent)
                         }
@@ -474,7 +474,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "17")
                             startActivity(intent)
                         }
@@ -496,7 +496,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "18")
                             startActivity(intent)
                         }
@@ -518,7 +518,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "19")
                             startActivity(intent)
                         }
@@ -540,7 +540,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "20")
                             startActivity(intent)
                         }
@@ -562,7 +562,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "21")
                             startActivity(intent)
                         }
@@ -584,7 +584,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "22")
                             startActivity(intent)
                         }
@@ -606,7 +606,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "23")
                             startActivity(intent)
                         }
@@ -628,7 +628,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "24")
                             startActivity(intent)
                         }
@@ -650,7 +650,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "25")
                             startActivity(intent)
                         }
@@ -672,7 +672,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "26")
                             startActivity(intent)
                         }
@@ -694,7 +694,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "27")
                             startActivity(intent)
                         }
@@ -716,7 +716,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "28")
                             startActivity(intent)
                         }
@@ -738,7 +738,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "29")
                             startActivity(intent)
                         }
@@ -760,7 +760,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
                         .setOnClickListener {
                             val intent: Intent = Intent(this, DescriptionActivity::class.java)
                             intent.putExtra("word", theWorsStringOnChooseActivityList[0])
-                            intent.putExtra("numPlaylist", "99")
+                            intent.putExtra("numPlaylist", "0")
                             intent.putExtra("letter", "30")
                             startActivity(intent)
                         }
@@ -769,8 +769,7 @@ class ChooseWordFromLetterActivity : AppCompatActivity() {
         }
         findViewById<ImageButton>(R.id.chooseWordBackButton)
             .setOnClickListener {
-                val intent: Intent = Intent(this, MainWindowActivity::class.java )
-                startActivity(intent)
+                this.finish()
             }
     }
 }

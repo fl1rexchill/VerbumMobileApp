@@ -28,6 +28,6 @@ class StartActivity : AppCompatActivity() {
 
         val intent = Intent(this, LoadingActivity::class.java)
         val handler = android.os.Handler()
-        handler.postDelayed({ startActivity(intent) }, 2000)
+        handler.postDelayed({ startActivity(intent); this.finish();}, 2000)
     }
 }

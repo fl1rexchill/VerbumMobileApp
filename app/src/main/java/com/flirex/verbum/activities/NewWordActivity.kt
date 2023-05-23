@@ -39,8 +39,7 @@ class NewWordActivity : AppCompatActivity() {
 
         findViewById<ImageButton>(R.id.newWordBackButton)
             .setOnClickListener {
-                val intent: Intent = Intent(this, MainActivity::class.java )
-                startActivity(intent)
+                this.finish()
             }
         auth = Firebase.auth
         val currentUser = auth.currentUser
@@ -92,8 +91,7 @@ class NewWordActivity : AppCompatActivity() {
                         }
 
                     }
-                val intent: Intent = Intent(this, MainActivity::class.java )
-                startActivity(intent)
+                this.finish()
             }
     }
 }

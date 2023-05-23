@@ -65,9 +65,7 @@ class AloneNewWordActivity : AppCompatActivity() {
         correctAnswerAloneNewWord = findViewById(R.id.correctAnswerAloneNewWord)
         findViewById<Button>(R.id.correctAnswerAloneNewWord)
             .setOnClickListener {
-
-                val intent: Intent = Intent(this, offersActivity::class.java )
-                startActivity(intent)
+                TODO("sending definition")
             }
 
         aloneNewWordBackButton = findViewById(R.id.aloneNewWordBackButton)
@@ -77,8 +75,7 @@ class AloneNewWordActivity : AppCompatActivity() {
 
         findViewById<ImageButton>(R.id.aloneNewWordBackButton)
             .setOnClickListener {
-                val intent: Intent = Intent(this, offersActivity::class.java )
-                startActivity(intent)
+                this.finish()
             }
     }
 }

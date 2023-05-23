@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.activity.addCallback
 import com.flirex.verbum.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -73,5 +74,10 @@ class MainActivity : AppCompatActivity() {
                 val intent: Intent = Intent(this, offersActivity::class.java )
                 startActivity(intent)
             }
+
+//        onBackPressedDispatcher.addCallback(this /* lifecycle owner */){
+//            //for back arrow handle
+//
+//        }
     }
 }

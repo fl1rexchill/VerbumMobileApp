@@ -94,8 +94,7 @@ class PlaylistsActivity : AppCompatActivity(), View.OnClickListener {
         }
         findViewById<ImageButton>(R.id.playlistsBackButton)
             .setOnClickListener {
-                val intent: Intent = Intent(this, MainActivity::class.java )
-                startActivity(intent)
+                this.finish()
             }
         playlistNumberOneActivityPlaylist.setOnClickListener(this)
         findViewById<TextView>(R.id.playlistNumberOneActivityPlaylist)

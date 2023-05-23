@@ -29,6 +29,7 @@ class LoadingActivity : Activity() {
             val intent: Intent = Intent(this, MainActivity::class.java )
             startActivity(intent)
 
+            this.finish()
             return
         }
 

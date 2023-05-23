@@ -49,8 +49,7 @@ class offersActivity : AppCompatActivity() {
 
         findViewById<ImageButton>(R.id.offersBackButton)
             .setOnClickListener {
-                val intent: Intent = Intent(this, MainActivity::class.java )
-                startActivity(intent)
+                this.finish()
             }
 
         db.collection("definitions").document("newDefinitions")

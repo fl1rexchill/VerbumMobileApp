@@ -144,8 +144,7 @@ class DescriptionActivity : AppCompatActivity() {
         if (numOfPlaylist == "0") {
             findViewById<ImageButton>(R.id.descriptionBackButton)
                 .setOnClickListener {
-                    val childIntent: Intent = Intent(this, MainWindowActivity::class.java )
-                    resultLauncher.launch(childIntent)
+                    this.finish()
                 }
         }
         if (numOfPlaylist == "1"){
@@ -175,15 +174,7 @@ class DescriptionActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
         }
-        if (numOfPlaylist == "99"){
-            val letterDescription = intent?.extras?.getString("letter").toString()
-            findViewById<ImageButton>(R.id.descriptionBackButton)
-                .setOnClickListener {
-                    val intent: Intent = Intent(this, ChooseWordFromLetterActivity::class.java )
-                    intent.putExtra("letter", "$letterDescription")
-                    startActivity(intent)
-                }
-        }
+
         findViewById<Button>(R.id.add_buttonDescription)
             .setOnClickListener {
                 add_buttonDescription.visibility = View.GONE

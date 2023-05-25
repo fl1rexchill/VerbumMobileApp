@@ -12,8 +12,11 @@ import com.flirex.verbum.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.AggregateSource
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.getField
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.*
 
 
 private lateinit var playlistsActivityTitle: TextView
@@ -24,11 +27,14 @@ private lateinit var noPlaylistNowText: TextView
 private lateinit var descriptionBackButton: ImageButton
 private lateinit var PlaylistTextInput: TextInputEditText
 private lateinit var createNewPlaylistAnswerButtonPlaylist: Button
+private lateinit var createNewPlaylistButton: Button
+const val DEFAULT_PLAYLIST_STATUS = "private"
 
 class PlaylistsActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var auth: FirebaseAuth
+    var auth: FirebaseAuth = Firebase.auth
     val db = Firebase.firestore
+    val currentUser = auth.currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,10 +63,8 @@ class PlaylistsActivity : AppCompatActivity(), View.OnClickListener {
         createNewPlaylistAnswerButtonPlaylist = findViewById(R.id.createNewPlaylistAnswerButtonPlaylist)
         createNewPlaylistAnswerButtonPlaylist.visibility = View.GONE
 
+        createNewPlaylistButton = findViewById(R.id.createNewPlaylistButton2)
         //playlistsActivityTitle.setText("Плейлисты")
-        auth = Firebase.auth
-        val currentUser = auth.currentUser
-        val db = Firebase.firestore
 
         db.collection("users").document(currentUser!!.uid)
             .get()
@@ -118,9 +122,69 @@ class PlaylistsActivity : AppCompatActivity(), View.OnClickListener {
                 intent.putExtra("num", "3")
                 startActivity(intent)
             }
+
+        //Functions usage
+        createNewPlaylistButton.setOnClickListener{
+            //adding of playlist
+            addPlaylist("Hentai","Aaaah",mutableListOf("yamete","kudasai","senpai"),
+                "Anonymous Developer","VERY PUBLIC, READING THIS IS NECESSARY"){
+                id -> Log.d("ADDED", id)
+                handleWordsFromPlaylist(id) { words ->
+                    //recieving of words
+                    Log.d("WORDS IN ARE", words.toString())
+                }
+            }
+
+        }
     }
 
     override fun onClick(v: View?) {
         TODO("Not yet implemented")
+    }
+
+    fun addPlaylist(
+        title   : String,
+        about   : String = "",
+        words   : MutableList<String> = mutableListOf(),
+        author  : String = currentUser!!.uid,
+        status  : String = DEFAULT_PLAYLIST_STATUS,
+        callback: ((String) -> Unit)? = null
+    ){
+        //TODO("a lot of successfulity checks")
+        var id: String
+        db.collection("playlists")
+            .count()
+            .get(AggregateSource.SERVER)
+            .addOnCompleteListener { task ->
+                id = task.result.count.toString()
+
+                db.collection("playlists")
+                    .document(id)
+                    .set(Playlist(
+                        id,
+                        author,
+                        title,
+                        about,
+                        status,
+                        words
+                    ))
+                    .addOnCompleteListener {
+                        callback?.invoke(id)
+                    }
+            }
+    }
+
+    fun handleWordsFromPlaylist(id:String, handleFun: (List<String>) -> Unit){
+
+        db.collection("playlists")
+            .document(id)
+            .get().addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d("words GET", "DocumentSnapshot data: ${document.data}")
+                    handleFun(document.get("words")!! as List<String>)
+                } else {
+                    Log.d("EEEError", "No such document")
+                }
+            }
     }
 }

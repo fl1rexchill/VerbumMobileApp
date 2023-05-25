@@ -35,5 +35,6 @@ class LoadingActivity : Activity() {
 
         val intent: Intent = Intent(this, SingUpActivity::class.java )
         startActivity(intent)
+        this.finish()
     }
 }

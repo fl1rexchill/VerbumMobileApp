@@ -192,8 +192,7 @@ class AlonePlaylistActivity : AppCompatActivity() {
         }
         findViewById<ImageButton>(R.id.alonePlaylistsBackButton)
             .setOnClickListener {
-                val childIntent: Intent = Intent(this, PlaylistsActivity::class.java )
-                resultLauncher.launch(childIntent)
+                finish()
             }
     }
 }

@@ -141,39 +141,12 @@ class DescriptionActivity : AppCompatActivity() {
                     checkplaylists = 1
                 }
             }
-        if (numOfPlaylist == "0") {
-            findViewById<ImageButton>(R.id.descriptionBackButton)
-                .setOnClickListener {
-                    this.finish()
-                }
-        }
-        if (numOfPlaylist == "1"){
-            findViewById<ImageButton>(R.id.descriptionBackButton)
-                .setOnClickListener {
-                    val intent: Intent = Intent(this, AlonePlaylistActivity::class.java )
-                    intent.putExtra("word", userPlaylistsList[0])
-                    intent.putExtra("num", "1")
-                    startActivity(intent)
-                }
-        }
-        if (numOfPlaylist == "2"){
-            findViewById<ImageButton>(R.id.descriptionBackButton)
-                .setOnClickListener {
-                    val intent: Intent = Intent(this, AlonePlaylistActivity::class.java )
-                    intent.putExtra("word", userPlaylistsList[1])
-                    intent.putExtra("num", "2")
-                    startActivity(intent)
-                }
-        }
-        if (numOfPlaylist == "3"){
-            findViewById<ImageButton>(R.id.descriptionBackButton)
-                .setOnClickListener {
-                    val intent: Intent = Intent(this, AlonePlaylistActivity::class.java )
-                    intent.putExtra("word", userPlaylistsList[2])
-                    intent.putExtra("num", "3")
-                    startActivity(intent)
-                }
-        }
+
+        findViewById<ImageButton>(R.id.descriptionBackButton)
+            .setOnClickListener {
+                this.finish()
+            }
+
 
         findViewById<Button>(R.id.add_buttonDescription)
             .setOnClickListener {

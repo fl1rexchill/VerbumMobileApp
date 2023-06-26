@@ -3,9 +3,9 @@ package com.flirex.verbum.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
-import androidx.activity.addCallback
 import com.flirex.verbum.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -17,12 +17,14 @@ var playlistsString:String? = ""
 var playlistNumberOne:String? = ""
 var playlistNumberTwo:String? = ""
 var playlistNumberThree:String? = ""
-lateinit var PlaylistsList: MutableList<String>
+var playlistsList: MutableList<String> = mutableListOf()
 var checkStatus:String? = ""
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var auth: FirebaseAuth
+    var auth: FirebaseAuth = Firebase.auth
     val db = Firebase.firestore
+    val currentUser = auth.currentUser
+
     private lateinit var textInput2: TextInputEditText
     private lateinit var newOffersButtonMain: Button
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +33,7 @@ class MainActivity : AppCompatActivity() {
         textInput2 = findViewById(R.id.text_input2)
         newOffersButtonMain = findViewById(R.id.newOffersButtonMain)
         newOffersButtonMain.visibility = View.GONE
-        auth = Firebase.auth
-        val currentUser = auth.currentUser
-        val db = Firebase.firestore
+
         db.collection("users").document(currentUser!!.uid)
             .get()
             .addOnSuccessListener { document ->
@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity() {
                 playlistNumberOne = document.getString("playlist1")
                 playlistNumberTwo = document.getString("playlist2")
                 playlistNumberThree = document.getString("playlist3")
-                PlaylistsList = playlistsString!!.split(" ") as MutableList<String>
+                playlistsList = playlistsString!!.split(",") as MutableList<String>
+                Log.d("DEBUG", playlistsList.toString())
                 if (checkStatus == "1"){
                     newOffersButtonMain.visibility = View.VISIBLE
                 }
@@ -57,6 +58,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.playlistsButtonMain)
             .setOnClickListener {
                 val intent: Intent = Intent(this, PlaylistsActivity::class.java )
+                startActivity(intent)
+            }
+        findViewById<Button>(R.id.publicPlaylistsButtonMain)
+            .setOnClickListener {
+                val intent: Intent = Intent(this, PublicPlaylistsActivity::class.java)
                 startActivity(intent)
             }
         findViewById<Button>(R.id.alphabetButtonMain)

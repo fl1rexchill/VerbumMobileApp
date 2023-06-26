@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.flirex.verbum">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -26,6 +25,9 @@
             android:exported="false" />
         <activity
             android:name=".activities.PlaylistsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PublicPlaylistsActivity"
             android:exported="false" />
         <activity
             android:name=".activities.ChooseWordFromLetterActivity"

@@ -44,7 +44,7 @@
         android:layout_marginTop="8dp"
         android:backgroundTint="#A02323"
         android:fontFamily="sans-serif-black"
-        android:text="плейлисты"
+        android:text="мои подборки"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:cornerRadius="10dp"
@@ -64,6 +64,21 @@
         android:textSize="18sp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/newWordButtonMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/publicPlaylistsButtonMain"
+        android:layout_width="295dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#A02323"
+        android:fontFamily="sans-serif-black"
+        android:text="готовые подборки"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/alphabetButtonMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -94,7 +109,7 @@
         app:icon="@drawable/ic_action_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toEndOf="@+id/text_input"
+        app:layout_constraintStart_toEndOf="@+id/text_input2"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

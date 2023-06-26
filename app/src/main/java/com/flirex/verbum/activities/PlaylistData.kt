@@ -1,6 +1,6 @@
 package com.flirex.verbum.activities
 
-data class Playlist(
+data class PlaylistData(
     val id:String,
     val author:String,
     val title:String,

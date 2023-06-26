@@ -23,7 +23,7 @@
         android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Плейлисты"
+        android:text="Подборки"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="40sp"
@@ -49,7 +49,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/PlaylistTextInput"
+        android:id="@+id/playlistTextInput"
         android:layout_width="244dp"
         android:layout_height="50dp"
         android:layout_marginBottom="40dp"
@@ -75,7 +75,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.754"
-        app:layout_constraintStart_toEndOf="@+id/namePlaylistTextInput"
+        app:layout_constraintStart_toEndOf="@+id/playlistTextInput"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
@@ -83,10 +83,9 @@
         android:layout_width="242dp"
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:textSize="32sp"
         android:text="TextView"
         android:textColor="#000000"
+        android:textSize="32sp"
         app:autoSizeMinTextSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playlistsActivityTitle" />
